@@ -15,15 +15,17 @@ If (([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]:
 }
 
 # Check if Dell Command Powershell Module is Installed ( This is for Dell BIOs Changes )
-Function CheckPowerShellModule {
+Function CheckDellPowerShellModule {
 
     If ( Get-InstalledModule -Name "DellBIOSProvider" ) {
 
         # Module is installed :D
         Write-Host "DellBIOSProvider Module Installed :D"
         Write-Host "Importing Module & Custom Functions"
-        Start-sleep 3
+        Start-Sleep 3
         Import-Module DellBIOSProvider
+        Write-Host "Setting Dell Bios..."
+        Start-Sleep 3
 
     } else {
         
@@ -34,6 +36,7 @@ Function CheckPowerShellModule {
         Set-PSRepository -Name 'PSGallery' -InstallationPolicy Trusted
         Install-Module DellBIOSProvider
         # Rerunning Check
+        CheckDellPowerShellModule
 
     }
 
@@ -44,9 +47,37 @@ Function CheckPowerShellModule {
 
 
 # Set BIOS Settings through DellBIOSProvider Module
-Function SetBIOSSettings {
+Function SetDellBIOSSettings {
 
     
 
+
+}
+
+
+Function GetBloat {
+
+    # Download Bloatware XML File
+    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/periurium/NSSS/main/Bloatware.xml" -outfile ".\Bloatware.xml"
+    # Handle XML File
+    [xml]$xmlBloat = Get-Content -Path .\Bloatware.xml
+        
+
+}
+
+
+# Check which Vendor the computer comes from (this is for BIOS and Bloatware)
+Function checkMan {
+
+    $vendor = wmic csproduct get vendor
+    switch ($vendor)
+    {
+        'Dell Inc.' {
+            CheckDellPowerShellModule
+        }
+        'Lenovo Inc.' {
+
+        }
+    }
 
 }
