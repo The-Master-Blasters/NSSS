@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DefaultBloatware>
-    <Bloatware value="Microsoft.BingWeather"/>
-    <Bloatware value="Microsoft.GetHelp"/>
-    <Bloatware value="Microsoft.Getstarted"/>
-    <Bloatware value="Microsoft.Microsoft3DViewer"/>
-    <Bloatware value="Microsoft.MicrosoftOfficeHub"/>
-    <Bloatware value="Microsoft.MicrosoftSolitaireCollection"/>
-    <Bloatware value="Microsoft.MicrosoftStickyNotes"/>
-    <Bloatware value="Microsoft.MixedReality.Portal"/>
-    <Bloatware value="Microsoft.Office.OneNote"/>
-    <Bloatware value="Microsoft.People"/>
-    <Bloatware value="Microsoft.ScreenSketch"/>
-    <Bloatware value="Microsoft.SkypeApp"/>
-    <Bloatware value="Microsoft.Windows.Photos"/>
-    <Bloatware value="Microsoft.WindowsAlarms"/>
-    <Bloatware value="Microsoft.WindowsFeedbackHub"/>
-    <Bloatware value="Microsoft.WindowsMaps"/>
-    <Bloatware value="Microsoft.WindowsSoundRecorder"/>
-    <Bloatware value="Microsoft.Xbox.TCUI"/>
-    <Bloatware value="Microsoft.XboxApp"/>
-    <Bloatware value="Microsoft.XboxGameOverlay"/>
-    <Bloatware value="Microsoft.XboxGamingOverlay"/>
-    <Bloatware value="Microsoft.XboxIdentityProvider"/>
-    <Bloatware value="Microsoft.XboxSpeechToTextOverlay"/>
-    <Bloatware value="Microsoft.ZuneMusic"/>
-    <Bloatware value="Microsoft.ZuneVideo"/>
-    <Bloatware value="DellInc.PartnerPromo"/>
-    <Bloatware value="DellInc.DellSupportAssistforPCs"/>
-    <Bloatware value="WavesAudio.MaxxAudioProforDell2020"/>
-    <Bloatware value="DellInc.DellDigitalDelivery"/>
-    <Bloatware value="C27EB4BA.DropboxOEM"/>
-    <Bloatware value="DellInc.DellCustomerConnect"/>
-    <Bloatware value="5A894077.McAfeeSecurity"/>
-    <Bloatware value="ScreenovateTechnologies.DellMobileConnect"/>
-    <Bloatware value="Microsoft.RemoteDesktop"/>
-    <Bloatware value="DellInc.DellPowerManager"/>
-    <Bloatware value="DellInc.MyDell"/>
-    <Bloatware value="DolbyLaboratories.DolbyAccess"/>
-    <Bloatware value="DolbyLaboratories.DolbyVisionAccess"/>
-    <Bloatware value="DellInc.DellCinemaGuide"/>
-    <Bloatware value="PortraitDisplays.DellCinemaColor"/>
-    <Bloatware value="PortraitDisplays.DellPremierColor"/>
-    <Bloatware value="SpotifyAB.SpotifyMusic"/>
+    <Bloatware package="" name="Microsoft.BingWeather"/>
+    <Bloatware package="" name="Microsoft.GetHelp"/>
+    <Bloatware package="" name="Microsoft.Getstarted"/>
+    <Bloatware package="" name="Microsoft.Microsoft3DViewer"/>
+    <Bloatware package="" name="Microsoft.MicrosoftOfficeHub"/>
+    <Bloatware package="" name="Microsoft.MicrosoftSolitaireCollection"/>
+    <Bloatware package="" name="Microsoft.MicrosoftStickyNotes"/>
+    <Bloatware package="" name="Microsoft.MixedReality.Portal"/>
+    <Bloatware package="" name="Microsoft.Office.OneNote"/>
+    <Bloatware package="" name="Microsoft.People"/>
+    <Bloatware package="" name="Microsoft.ScreenSketch"/>
+    <Bloatware package="" name="Microsoft.SkypeApp"/>
+    <Bloatware package="" name="Microsoft.Windows.Photos"/>
+    <Bloatware package="" name="Microsoft.WindowsAlarms"/>
+    <Bloatware package="" name="Microsoft.WindowsFeedbackHub"/>
+    <Bloatware package="" name="Microsoft.WindowsMaps"/>
+    <Bloatware package="" name="Microsoft.WindowsSoundRecorder"/>
+    <Bloatware package="Microsoft.Xbox.TCUI_1.23.28002.0_x64__8wekyb3d8bbwe" name="Microsoft.Xbox.TCUI"/>
+    <Bloatware package="" name="Microsoft.XboxApp"/>
+    <Bloatware package="" name="Microsoft.XboxGameOverlay"/>
+    <Bloatware package="" name="Microsoft.XboxGamingOverlay"/>
+    <Bloatware package="" name="Microsoft.XboxIdentityProvider"/>
+    <Bloatware package="" name="Microsoft.XboxSpeechToTextOverlay"/>
+    <Bloatware package="" name="Microsoft.ZuneMusic"/>
+    <Bloatware package="" name="Microsoft.ZuneVideo"/>
+    <Bloatware package="" name="DellInc.PartnerPromo"/>
+    <Bloatware package="" name="DellInc.DellSupportAssistforPCs"/>
+    <Bloatware package="" name="WavesAudio.MaxxAudioProforDell2020"/>
+    <Bloatware package="" name="DellInc.DellDigitalDelivery"/>
+    <Bloatware package="" name="C27EB4BA.DropboxOEM"/>
+    <Bloatware package="" name="DellInc.DellCustomerConnect"/>
+    <Bloatware package="" name="5A894077.McAfeeSecurity"/>
+    <Bloatware package="" name="ScreenovateTechnologies.DellMobileConnect"/>
+    <Bloatware package="" name="Microsoft.RemoteDesktop"/>
+    <Bloatware package="" name="DellInc.DellPowerManager"/>
+    <Bloatware package="" name="DellInc.MyDell"/>
+    <Bloatware package="" name="DolbyLaboratories.DolbyAccess"/>
+    <Bloatware package="" name="DolbyLaboratories.DolbyVisionAccess"/>
+    <Bloatware package="" name="DellInc.DellCinemaGuide"/>
+    <Bloatware package="" name="PortraitDisplays.DellCinemaColor"/>
+    <Bloatware package="" name="PortraitDisplays.DellPremierColor"/>
+    <Bloatware package="" name="SpotifyAB.SpotifyMusic"/>
 </DefaultBloatware>

@@ -49,7 +49,7 @@ Function CheckDellPowerShellModule {
 # Set BIOS Settings through DellBIOSProvider Module
 Function SetDellBIOSSettings {
 
-    
+    # Run through BIOs Settings
 
 
 }
@@ -60,7 +60,7 @@ Function GetBloat {
     # Download Bloatware XML File
     Invoke-WebRequest -Uri "https://raw.githubusercontent.com/periurium/NSSS/main/Bloatware.xml" -outfile ".\Bloatware.xml"
     # Handle XML File
-    [xml]$xmlBloat = Get-Content -Path .\Bloatware.xml
+    $xmlBloat = Select-Xml -Path .\Bloatware.xml -XPath '/DefaultBloatware/Bloatware' | ForEach-Object {$_.Node}
         
 
 }
