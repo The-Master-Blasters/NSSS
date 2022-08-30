@@ -2,6 +2,7 @@
 
 $BloatPath = "https://raw.githubusercontent.com/periurium/NSSS/main/Bloatware.xml"
 $AppPath = "https://raw.githubusercontent.com/periurium/NSSS/main/AppAssociations.xml"
+$AppInstaller = "https://github.com/The-Master-Blasters/NSSS/blob/main/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe%20.msixbundle"
 
 
 # Check if Script is run as Administrator. If not, elevate
@@ -13,6 +14,30 @@ If (([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]:
     Exit
 
 }
+
+# Menu 
+Function Show-Menu { 
+    Write-Host "
+  ██████████████████████████████████████████████████
+  ██████████████████████████████████████████████████
+  ██XXXXXXXXX██                        ██XXXXXXXXX██
+  ██XXXXXXXXX██    System Setup Tool   ██XXXXXXXXX██
+  ██XXXXXXXXX██                        ██XXXXXXXXX██  
+  ██████████████████████████████████████████████████
+  ██████████████████████████████████████████████████
+  
+  1: Select '1' for System-Wide changes
+  2: Select '2' for User-Specific changes
+  3: Select '3' for both System and User changes
+  4: Select '4' to apply the current Lenovo BIOS configuration
+  5: Select '5' to apply the current Dell BIOS configuration
+  6: Select '6' to start Windows Explorer
+  7: Select '7' to install base applications
+  Q: Select 'Q' to exit
+  
+  "
+}
+
 
 # Check if Dell Command Powershell Module is Installed ( This is for Dell BIOs Changes )
 Function CheckDellPowerShellModule {
@@ -65,6 +90,13 @@ Function GetBloat {
 
 }
 
+Function InstallBaseApps {
+
+    # Run App Installer Script
+    .\ProgramInstaller.ps1 $appinstaller 
+
+}
+
 
 # Check which Vendor the computer comes from (this is for BIOS and Bloatware)
 Function checkMan {
@@ -75,9 +107,51 @@ Function checkMan {
         'Dell Inc.' {
             CheckDellPowerShellModule
         }
-        'Lenovo Inc.' {
+        'LENOVO' {
 
         }
     }
 
 }
+
+Show-Menu
+do
+{
+    $selection = Read-Host "Please make a selection"
+    switch ($selection)
+    {
+        '1' {
+            # System Wide Changes
+
+        }
+        '2' {
+            # User-Specific Changes
+        }
+        '3' {
+            # Both System Wide & User-Specific Changes
+
+        }   
+        '4'{
+            # Apply Lenovo BIOs
+
+        }
+        '5' {
+            # Apply Dell BIOs
+
+        }
+        '6' {
+            # Start Windows Explorer
+
+        }
+        '7' {
+            # Install Base Applications
+
+        }
+        'q' {
+            # Close Application
+
+        }
+    } pause 
+    
+}
+until ($selection -eq 'q')
