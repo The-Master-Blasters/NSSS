@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Apps>
+    <app name="FileZilla Client" id="TimKosse.FileZilla.Client"/>
+    <app name="Google Chrome" id="Google.Chrome"/>
+    <app name="7-Zip" id="7zip.7zip"/>
+    <app name="Putty" id="Putty.PuTTY"/>
+    <app name="Adobe Acrobat Reader DC (64-bit)" id="Adobe.Acrobat.Reader.64-bit"/>
+</Apps> 

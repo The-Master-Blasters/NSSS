@@ -4,8 +4,8 @@
 Param(
   [Parameter(Mandatory=$true)]
   [string]$appinstaller,
-  [Parameter(Mandatory=$false)]
-  [string]$Foo
+  [Parameter(Mandatory=$true)]
+  [string]$AppInstallList
 )
 
 # Check if Script is run as Administrator. If not, elevate
@@ -20,10 +20,10 @@ If (([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]:
 
 Function InstallWinGet {
 
-    'WinGet is not installed...'
+    'Winget is not installed...'
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls13
-    wget $appinstaller -OutFile ".\appinstaller.msixbundle"
-
+    Invoke-WebRequest $appinstaller -OutFile ".\appinstaller.msixbundle"
+    "Installing Winget"
     Add-AppPackage -Path ".\appinstaller.msixbundle"
 
 }
@@ -32,14 +32,28 @@ Function InstallApps {
 
     #try {winget.exe install filezilla --silent}
     #catch { InstallWinGet }
+    "Grabbing Application List"
+
+    try {
+
+        Invoke-WebRequest $AppInstallList -OutFile .\InstallApps.xml
+        [xml]$applist = Get-Content ".\InstallApps.xml"
+
+    } catch { "Unable to grab application list"}
+
     "Installing Applications..."
 
+    foreach ($app in $applist.apps.app) {
+        winget install [string]$app.id --silent
+    }
+
+
     # WinGet Install Apps
-    winget.exe install filezilla --silent
-    winget.exe install Google.Chrome --silent
-    winget.exe install 7zip.7zip --silent
-    winget.exe install PuTTY.PuTTY --silent
-    winget.exe install Adobe.Acrobat.Reader.64-bit --silent
+    #winget.exe install filezilla --silent
+    #winget.exe install Google.Chrome --silent
+    #winget.exe install 7zip.7zip --silent
+    #winget.exe install PuTTY.PuTTY --silent
+    #winget.exe install Adobe.Acrobat.Reader.64-bit --silent
 
 }
 

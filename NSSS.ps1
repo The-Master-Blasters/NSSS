@@ -1,7 +1,8 @@
 ﻿# A Remake of Nates "System Setup Script"
 
-$BloatPath = "https://raw.githubusercontent.com/periurium/NSSS/main/Bloatware.xml"
-$AppPath = "https://raw.githubusercontent.com/periurium/NSSS/main/AppAssociations.xml"
+$BloatPath = "https://raw.githubusercontent.com/periurium/NSSS/main/xml/Bloatware.xml"
+$AppPath = "https://raw.githubusercontent.com/periurium/NSSS/main/xml/AppAssociations.xml"
+$AppInstallList = "https://raw.githubusercontent.com/periurium/NSSS/main/xml/InstallApps.xml"
 $AppInstaller = "https://github.com/The-Master-Blasters/NSSS/blob/main/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe%20.msixbundle"
 
 
@@ -40,35 +41,7 @@ Function Show-Menu {
 
 
 # Check if Dell Command Powershell Module is Installed ( This is for Dell BIOs Changes )
-Function CheckDellPowerShellModule {
 
-    If ( Get-InstalledModule -Name "DellBIOSProvider" ) {
-
-        # Module is installed :D
-        Write-Host "DellBIOSProvider Module Installed :D"
-        Write-Host "Importing Module & Custom Functions"
-        Start-Sleep 3
-        Import-Module DellBIOSProvider
-        Write-Host "Setting Dell Bios..."
-        Start-Sleep 3
-
-    } else {
-        
-        Write-Host "Installing DellBIOSProvider Module"
-
-        # Module isn't installed
-        # Set Repository to Trusted ( Prevents Popup window ) & Install Module
-        Set-PSRepository -Name 'PSGallery' -InstallationPolicy Trusted
-        Install-Module DellBIOSProvider
-        # Rerunning Check
-        CheckDellPowerShellModule
-
-    }
-
-
-    Get-InstalledModule -Name "DellBIOSProvider"
-
-}
 
 
 # Set BIOS Settings through DellBIOSProvider Module
@@ -93,7 +66,7 @@ Function GetBloat {
 Function InstallBaseApps {
 
     # Run App Installer Script
-    .\ProgramInstaller.ps1 $appinstaller 
+    .\ProgramInstaller.ps1 $appinstaller $AppInstallList
 
 }
 
@@ -110,6 +83,22 @@ Function checkMan {
         'LENOVO' {
 
         }
+    }
+
+}
+
+
+# Cleaning Function ( Remove downloaded files )
+function clean($method) {
+
+    switch ($method) 
+    {
+
+        'InstallBaseApps' {
+            Remove-Item .\appinstaller.msixbundle
+
+        }
+
     }
 
 }
@@ -145,6 +134,9 @@ do
         }
         '7' {
             # Install Base Applications
+            InstallBaseApps
+            # Clean Up Files
+            clean("InstallBaseApps")
 
         }
         'q' {
