@@ -43,17 +43,11 @@ Function InstallApps {
 
     "Installing Applications..."
 
-    foreach ($app in $applist.apps.app) {
-        winget install [string]$app.id --silent
+    foreach ($app in $applist.apps.app.id) {
+        Write-Host $app
+        winget install $app --silent
     }
 
-
-    # WinGet Install Apps
-    #winget.exe install filezilla --silent
-    #winget.exe install Google.Chrome --silent
-    #winget.exe install 7zip.7zip --silent
-    #winget.exe install PuTTY.PuTTY --silent
-    #winget.exe install Adobe.Acrobat.Reader.64-bit --silent
 
 }
 

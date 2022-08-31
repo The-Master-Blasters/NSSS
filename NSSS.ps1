@@ -3,6 +3,7 @@
 $BloatPath = "https://raw.githubusercontent.com/periurium/NSSS/main/xml/Bloatware.xml"
 $AppPath = "https://raw.githubusercontent.com/periurium/NSSS/main/xml/AppAssociations.xml"
 $AppInstallList = "https://raw.githubusercontent.com/periurium/NSSS/main/xml/InstallApps.xml"
+$programinstaller = "https://raw.githubusercontent.com/periurium/NSSS/main/ProgramInstaller.ps1"
 $AppInstaller = "https://github.com/The-Master-Blasters/NSSS/blob/main/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe%20.msixbundle"
 
 
@@ -65,6 +66,7 @@ Function GetBloat {
 
 Function InstallBaseApps {
 
+    Invoke-WebRequest -Uri $programinstaller -OutFile ".\ProgramInstaller.ps1"
     # Run App Installer Script
     .\ProgramInstaller.ps1 $appinstaller $AppInstallList
 
@@ -95,8 +97,10 @@ function clean($method) {
     {
 
         'InstallBaseApps' {
+            "Cleaning Apps"
             Remove-Item .\appinstaller.msixbundle
-
+            Remove-Item .\ProgramInstaller.ps1
+            Remove-Item .\InstallApps.xml
         }
 
     }
