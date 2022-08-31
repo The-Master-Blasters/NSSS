@@ -40,30 +40,6 @@ Function Show-Menu {
   "
 }
 
-
-# Check if Dell Command Powershell Module is Installed ( This is for Dell BIOs Changes )
-
-
-
-# Set BIOS Settings through DellBIOSProvider Module
-Function SetDellBIOSSettings {
-
-    # Run through BIOs Settings
-
-
-}
-
-
-Function GetBloat {
-
-    # Download Bloatware XML File
-    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/periurium/NSSS/main/Bloatware.xml" -outfile ".\Bloatware.xml"
-    # Handle XML File
-    $xmlBloat = Select-Xml -Path .\Bloatware.xml -XPath '/DefaultBloatware/Bloatware' | ForEach-Object {$_.Node}
-        
-
-}
-
 Function InstallBaseApps {
 
     Invoke-WebRequest -Uri $programinstaller -OutFile ".\ProgramInstaller.ps1"
@@ -77,8 +53,7 @@ Function InstallBaseApps {
 Function checkMan {
 
     $vendor = wmic csproduct get vendor
-    switch ($vendor)
-    {
+    switch ($vendor) {
         'Dell Inc.' {
             CheckDellPowerShellModule
         }
@@ -93,8 +68,7 @@ Function checkMan {
 # Cleaning Function ( Remove downloaded files )
 function clean($method) {
 
-    switch ($method) 
-    {
+    switch ($method) {
 
         'InstallBaseApps' {
             "Cleaning Apps"
@@ -108,11 +82,9 @@ function clean($method) {
 }
 
 Show-Menu
-do
-{
+do {
     $selection = Read-Host "Please make a selection"
-    switch ($selection)
-    {
+    switch ($selection) {
         '1' {
             # System Wide Changes
 
@@ -124,7 +96,7 @@ do
             # Both System Wide & User-Specific Changes
 
         }   
-        '4'{
+        '4' {
             # Apply Lenovo BIOs
 
         }

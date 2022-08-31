@@ -2,10 +2,10 @@
 
 [CmdletBinding()]
 Param(
-  [Parameter(Mandatory=$true)]
-  [string]$appinstaller,
-  [Parameter(Mandatory=$true)]
-  [string]$AppInstallList
+    [Parameter(Mandatory = $true)]
+    [string]$appinstaller,
+    [Parameter(Mandatory = $true)]
+    [string]$AppInstallList
 )
 
 # Check if Script is run as Administrator. If not, elevate
@@ -30,8 +30,6 @@ Function InstallWinGet {
 
 Function InstallApps {
 
-    #try {winget.exe install filezilla --silent}
-    #catch { InstallWinGet }
     "Grabbing Application List"
 
     try {
@@ -39,7 +37,8 @@ Function InstallApps {
         Invoke-WebRequest $AppInstallList -OutFile .\InstallApps.xml
         [xml]$applist = Get-Content ".\InstallApps.xml"
 
-    } catch { "Unable to grab application list"}
+    }
+    catch { "Unable to grab application list" }
 
     "Installing Applications..."
 
