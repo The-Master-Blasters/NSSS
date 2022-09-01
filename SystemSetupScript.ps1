@@ -1,11 +1,13 @@
 ﻿# A Remake of Nates "System Setup Script"
 
-$BloatPath = "https://raw.githubusercontent.com/periurium/NSSS/main/xml/Bloatware.xml"
-$AppPath = "https://raw.githubusercontent.com/periurium/NSSS/main/xml/AppAssociations.xml"
-$AppInstallList = "https://raw.githubusercontent.com/periurium/NSSS/main/xml/InstallApps.xml"
-$programinstaller = "https://raw.githubusercontent.com/periurium/NSSS/main/ProgramInstaller.ps1"
-$AppInstaller = "https://github.com/The-Master-Blasters/NSSS/blob/main/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe%20.msixbundle"
+#$BloatPath = "https://raw.githubusercontent.com/periurium/NSSS/main/xml/Bloatware.xml"
+#$AppPath = "https://raw.githubusercontent.com/periurium/NSSS/main/xml/AppAssociations.xml"
+#$AppInstallList = "https://raw.githubusercontent.com/periurium/NSSS/main/xml/InstallApps.xml"
+#$programinstaller = "https://raw.githubusercontent.com/periurium/NSSS/main/ProgramInstaller.ps1"
+#$AppInstaller = "https://github.com/The-Master-Blasters/NSSS/blob/main/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe%20.msixbundle"
 
+$FileWebPath = "https://raw.githubusercontent.com/periurium/NSSS/main/"
+$InstallerWebPath = "https://github.com/The-Master-Blasters/NSSS/blob/main/"
 
 # Check if Script is run as Administrator. If not, elevate
 If (([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
@@ -42,9 +44,9 @@ Function Show-Menu {
 
 Function InstallBaseApps {
 
-    Invoke-WebRequest -Uri $programinstaller -OutFile ".\ProgramInstaller.ps1"
+    Invoke-WebRequest -Uri [string]$FileWebPath+"inc/ProgramInstaller.ps1" -OutFile ".\ProgramInstaller.ps1"
     # Run App Installer Script
-    .\ProgramInstaller.ps1 $appinstaller $AppInstallList
+    .\ProgramInstaller.ps1 $FileWebPath $InstallerWebPath
 
 }
 
@@ -71,10 +73,14 @@ function clean($method) {
     switch ($method) {
 
         'InstallBaseApps' {
-            "Cleaning Apps"
+            "Cleaning..."
             Remove-Item .\appinstaller.msixbundle
             Remove-Item .\ProgramInstaller.ps1
             Remove-Item .\InstallApps.xml
+        }
+
+        'SystemWideChanges' {
+            "Cleaning..."
         }
 
     }
@@ -87,6 +93,7 @@ do {
     switch ($selection) {
         '1' {
             # System Wide Changes
+            Remove-Bloatware
 
         }
         '2' {

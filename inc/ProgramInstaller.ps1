@@ -1,12 +1,13 @@
-
-
 [CmdletBinding()]
 Param(
     [Parameter(Mandatory = $true)]
-    [string]$appinstaller,
+    [string]$FileWebPath,
     [Parameter(Mandatory = $true)]
-    [string]$AppInstallList
+    [string]$InstallerWebPath
 )
+
+$AppInstallList = "xml/InstallApps.xml"
+$AppInstaller = "installers/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe%20.msixbundle"
 
 # Check if Script is run as Administrator. If not, elevate
 If (([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
@@ -22,7 +23,7 @@ Function InstallWinGet {
 
     'Winget is not installed...'
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls13
-    Invoke-WebRequest $appinstaller -OutFile ".\appinstaller.msixbundle"
+    Invoke-WebRequest [string]$InstallerWebPath+[string]$AppInstaller -OutFile ".\appinstaller.msixbundle"
     "Installing Winget"
     Add-AppPackage -Path ".\appinstaller.msixbundle"
 
@@ -34,7 +35,7 @@ Function InstallApps {
 
     try {
 
-        Invoke-WebRequest $AppInstallList -OutFile .\InstallApps.xml
+        Invoke-WebRequest [string]$FileWebPath+[string]$AppInstallList -OutFile .\InstallApps.xml
         [xml]$applist = Get-Content ".\InstallApps.xml"
 
     }
