@@ -23,7 +23,7 @@ Function InstallWinGet {
 
     'Winget is not installed...'
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls13
-    Invoke-WebRequest [string]$InstallerWebPath+[string]$AppInstaller -OutFile ".\appinstaller.msixbundle"
+    Invoke-WebRequest $InstallerWebPath+$AppInstaller -OutFile ".\appinstaller.msixbundle"
     "Installing Winget"
     Add-AppPackage -Path ".\appinstaller.msixbundle"
 
