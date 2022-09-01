@@ -1,13 +1,6 @@
 ﻿# A Remake of Nates "System Setup Script"
 
-#$BloatPath = "https://raw.githubusercontent.com/periurium/NSSS/main/xml/Bloatware.xml"
-#$AppPath = "https://raw.githubusercontent.com/periurium/NSSS/main/xml/AppAssociations.xml"
-#$AppInstallList = "https://raw.githubusercontent.com/periurium/NSSS/main/xml/InstallApps.xml"
-#$programinstaller = "https://raw.githubusercontent.com/periurium/NSSS/main/ProgramInstaller.ps1"
-#$AppInstaller = "https://github.com/The-Master-Blasters/NSSS/blob/main/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe%20.msixbundle"
-
-$FileWebPath = "https://raw.githubusercontent.com/periurium/NSSS/main/"
-$InstallerWebPath = "https://github.com/The-Master-Blasters/NSSS/blob/main/"
+$FileWebPath = "https://github.com/The-Master-Blasters/NSSS/blob/main/"
 
 # Check if Script is run as Administrator. If not, elevate
 If (([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
@@ -44,9 +37,10 @@ Function Show-Menu {
 
 Function InstallBaseApps {
 
-    Invoke-WebRequest -Uri [string]$FileWebPath+"inc/ProgramInstaller.ps1" -OutFile ".\ProgramInstaller.ps1"
+    $ProgramScriptPath = (-join($FileWebPath, "inc/ProgramInstaller.ps1?raw=true"))
+    Invoke-WebRequest -Uri $ProgramScriptPath -OutFile ".\ProgramInstaller.ps1"
     # Run App Installer Script
-    .\ProgramInstaller.ps1 $FileWebPath $InstallerWebPath
+    .\ProgramInstaller.ps1 $FileWebPath 
 
 }
 
