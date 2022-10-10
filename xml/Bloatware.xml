@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <DefaultBloatware>
-    <Bloatware name="" id="Microsoft.BingWeather"/>
-    <Bloatware name="" id="Microsoft.GetHelp"/>
-    <Bloatware name="" id="Microsoft.Getstarted"/>
-    <Bloatware name="" id="Microsoft.Microsoft3DViewer"/>
-    <Bloatware name="" id="Microsoft.MicrosoftOfficeHub"/>
-    <Bloatware name="" id="Microsoft.MicrosoftSolitaireCollection"/>
-    <Bloatware name="" id="Microsoft.MicrosoftStickyNotes"/>
-    <Bloatware name="" id="Microsoft.MixedReality.Portal"/>
-    <Bloatware name="" id="Microsoft.Office.OneNote"/>
-    <Bloatware name="" id="Microsoft.People"/>
-    <Bloatware name="" id="Microsoft.ScreenSketch"/>
-    <Bloatware name="" id="Microsoft.SkypeApp"/>
-    <Bloatware name="" id="Microsoft.Windows.Photos"/>
-    <Bloatware name="" id="Microsoft.WindowsAlarms"/>
-    <Bloatware name="" id="Microsoft.WindowsFeedbackHub"/>
-    <Bloatware name="" id="Microsoft.WindowsMaps"/>
-    <Bloatware name="" id="Microsoft.WindowsSoundRecorder"/>
-    <Bloatware name="" id="Microsoft.Xbox.TCUI"/>
-    <Bloatware name="" id="Microsoft.XboxApp"/>
-    <Bloatware name="" id="Microsoft.XboxGameOverlay"/>
-    <Bloatware name="" id="Microsoft.XboxGamingOverlay"/>
-    <Bloatware name="" id="Microsoft.XboxIdentityProvider"/>
-    <Bloatware name="" id="Microsoft.XboxSpeechToTextOverlay"/>
-    <Bloatware name="" id="Microsoft.ZuneMusic"/>
-    <Bloatware name="" id="Microsoft.ZuneVideo"/>
-    <Bloatware name="" id="DellInc.PartnerPromo"/>
-    <Bloatware name="" id="DellInc.DellSupportAssistforPCs"/>
-    <Bloatware name="" id="WavesAudio.MaxxAudioProforDell2020"/>
-    <Bloatware name="" id="DellInc.DellDigitalDelivery"/>
-    <Bloatware name="" id="C27EB4BA.DropboxOEM"/>
-    <Bloatware name="" id="DellInc.DellCustomerConnect"/>
-    <Bloatware name="" id="5A894077.McAfeeSecurity"/>
-    <Bloatware name="" id="ScreenovateTechnologies.DellMobileConnect"/>
-    <Bloatware name="" id="Microsoft.RemoteDesktop"/>
-    <Bloatware name="" id="DellInc.DellPowerManager"/>
-    <Bloatware name="" id="DellInc.MyDell"/>
-    <Bloatware name="" id="DolbyLaboratories.DolbyAccess"/>
-    <Bloatware name="" id="DolbyLaboratories.DolbyVisionAccess"/>
-    <Bloatware name="" id="DellInc.DellCinemaGuide"/>
-    <Bloatware name="" id="PortraitDisplays.DellCinemaColor"/>
-    <Bloatware name="" id="PortraitDisplays.DellPremierColor"/>
-    <Bloatware name="" id="SpotifyAB.SpotifyMusic"/>
+    <Bloatware name="MSN Weather" id="Microsoft.BingWeather_8wekyb3d8bbwe" />
+    <Bloatware name="Get Help" id="Microsoft.GetHelp_8wekyb3d8bbwe" />
+    <Bloatware name="Microsoft Tips" id="Microsoft.Getstarted_8wekyb3d8bbwe" />
+    <Bloatware name="3D Viewer" id="Microsoft.Microsoft3DViewer_8wekyb3d8bbwe" />
+    <Bloatware name="Office" id="Microsoft.MicrosoftOfficeHub_8wekyb3d8bbwe" />
+    <Bloatware name="Microsoft Solitare Collection" id="Microsoft.MicrosoftSolitaireCollection_8wekyb3d8bbwe" />
+    <Bloatware name="Microsoft Sticky Notes" id="Microsoft.MicrosoftSolitaireCollection_8wekyb3d8bbwe" />
+    <Bloatware name="Mixed Reality Portal" id="Microsoft.MicrosoftSolitaireCollection_8wekyb3d8bbwe" />
+    <Bloatware name="OneNote for Windows 10" id="Microsoft.MicrosoftSolitaireCollection_8wekyb3d8bbwe" />
+    <Bloatware name="Microsoft People" id="Microsoft.People_8wekyb3d8bbwe" />
+    <Bloatware name="" id="Microsoft.ScreenSketch" />
+    <Bloatware name="Skype" id="Microsoft.SkypeApp_kzf8qxf38zg5c" />
+    <Bloatware name="Microsoft Photos" id="Microsoft.Windows.Photos_8wekyb3d8bbwe" />
+    <Bloatware name="Windows Clock" id="Microsoft.WindowsAlarms_8wekyb3d8bbwe" />
+    <Bloatware name="Feedback Hub" id="Microsoft.WindowsFeedbackHub_8wekyb3d8bbwe" />
+    <Bloatware name="Windows Maps" id="Microsoft.WindowsMaps_8wekyb3d8bbwe" />
+    <Bloatware name="Windows Sound Recorder" id="Microsoft.WindowsSoundRecorder_8wekyb3d8bbwe" />
+    <Bloatware name="Xbox TCUI" id="Microsoft.Xbox.TCUI_8wekyb3d8bbwe" />
+    <Bloatware name="Xbox Console Companion" id="Microsoft.XboxApp_8wekyb3d8bbwe" />
+    <Bloatware name="Xbox Game Bar Plugin" id="Microsoft.XboxApp_8wekyb3d8bbwe" />
+    <Bloatware name="Xbox Game Bar" id="Microsoft.XboxGamingOverlay_8wekyb3d8bbwe" />
+    <Bloatware name="Xbox Identity Provider" id="Microsoft.XboxGamingOverlay_8wekyb3d8bbwe" />
+    <Bloatware name="Xbox Game Speech Window" id="Microsoft.XboxSpeechToTextOverlay_8wekyb3d8bbwe" />
+    <Bloatware name="Windows Media Player" id="Microsoft.ZuneMusic_8wekyb3d8bbwe" />
+    <Bloatware name="Movies & TV" id="Microsoft.ZuneVideo_8wekyb3d8bbwe" />
+    <Bloatware name="Partner Promo" id="DellInc.PartnerPromo_htrsf667h5kn2" />
+    <Bloatware name="" id="DellInc.DellSupportAssistforPCs" />
+    <Bloatware name="Waves MaxxAudio Pro for Dell 2020" id="WavesAudio.MaxxAudioProforDell2020_fh4rh281wavaa" />
+    <Bloatware name="" id="DellInc.DellDigitalDelivery" />
+    <Bloatware name="" id="C27EB4BA.DropboxOEM" />
+    <Bloatware name="Dell Customer Connect" id="DellInc.DellCustomerConnect_htrsf667h5kn2" />
+    <Bloatware name="" id="5A894077.McAfeeSecurity" />
+    <Bloatware name="" id="ScreenovateTechnologies.DellMobileConnect" />
+    <Bloatware name="" id="Microsoft.RemoteDesktop" />
+    <Bloatware name="" id="DellInc.DellPowerManager" />
+    <Bloatware name="" id="DellInc.MyDell" />
+    <Bloatware name="" id="DolbyLaboratories.DolbyAccess" />
+    <Bloatware name="" id="DolbyLaboratories.DolbyVisionAccess" />
+    <Bloatware name="" id="DellInc.DellCinemaGuide" />
+    <Bloatware name="" id="PortraitDisplays.DellCinemaColor" />
+    <Bloatware name="" id="PortraitDisplays.DellPremierColor" />
+    <Bloatware name="Spotify" id="SpotifyAB.SpotifyMusic" />
 </DefaultBloatware>

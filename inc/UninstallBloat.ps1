@@ -1,4 +1,14 @@
+[CmdletBinding()]
+Param(
+    [Parameter(Mandatory = $true)]
+    [string]$FileWebPath
+)
+
+$
+
 # Script to Uninstall Bloatware using WinGet
+
+
 
 # Check if Script is run as Administrator. If not, elevate
 If (([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
@@ -9,4 +19,6 @@ If (([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]:
     Exit
 
 }
+
+
 

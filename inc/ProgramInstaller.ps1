@@ -5,7 +5,7 @@ Param(
 )
 
 $AppInstallList = "xml/InstallApps.xml?raw=true"
-$AppInstaller = "installers/Microsoft.DesktopAppInstaller_8wekyb3d8bbwe%20.msixbundle"
+$AppInstaller = "installers/appinstaller.msixbundle"
 
 # Check if Script is run as Administrator. If not, elevate
 If (([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
@@ -17,25 +17,13 @@ If (([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]:
 
 }
 
-Function InstallWinGet {
-
-    'Winget is not installed...'
-    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls13
-    $ProgramInstallerPath = (-join($FileWebPath, $AppInstaller))
-    Write-Host $ProgramInstallerPath
-    Invoke-WebRequest $ProgramInstallerPath -OutFile ".\appinstaller.msixbundle"
-    "Installing Winget"
-    Add-AppPackage -Path ".\appinstaller.msixbundle"
-
-}
-
 Function InstallApps {
 
     "Grabbing Application List"
 
     try {
 
-        $xmlfilepath = (-join($FileWebPath, $AppInstallList))
+        $xmlfilepath = ( -join ($FileWebPath, $AppInstallList))
         Invoke-WebRequest $xmlfilepath -OutFile .\InstallApps.xml
         [xml]$applist = Get-Content ".\InstallApps.xml"
 
@@ -46,7 +34,8 @@ Function InstallApps {
 
     foreach ($app in $applist.apps.app.id) {
         Write-Host $app
-        winget install $app --silent
+        WriteLog "Installing $app..."
+        try {winget install $app --silent} catch {WriteLog "An error has occured while downloading application"}   
     }
 
 

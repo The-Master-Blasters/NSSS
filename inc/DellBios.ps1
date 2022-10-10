@@ -1,3 +1,10 @@
+(CmdletBinding())
+Param(
+    [Parameter(Mandatory = $true)]
+    [string]$FileWebPath
+)
+
+$DellBiosList = "xml/DellBios.xml?raw=true"
 
 # Check if Script is run as Administrator. If not, elevate
 If (([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")) {
